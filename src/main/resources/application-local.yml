@@ -8,4 +8,3 @@ spring:
     hibernate:
       ddl-auto: validate # now hibernate gonna validate data in sql db
 
-
