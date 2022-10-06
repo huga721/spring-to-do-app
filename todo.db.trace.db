@@ -1,9 +1,0 @@
-2022-10-05 11:40:49 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FLYWAY_SCHEMA_HISTORY" not found (candidates are: "flyway_schema_history"); SQL statement:
-select * from flyway_schema_history [42103-214]
-2022-10-05 11:41:14 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FLYWAY_SCHEMA_HISTORY" not found (candidates are: "flyway_schema_history"); SQL statement:
-select * from flyway_schema_history [42103-214]
-2022-10-05 11:41:27 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "FLYWAY_SCHEMA_HISTORY" not found (candidates are: "flyway_schema_history"); SQL statement:
-select * from flyway_schema_history [42103-214]
