@@ -13,6 +13,11 @@ public class Task {
     @NotBlank(message = "Task's description must not be empty")
     private String description;
     private boolean done;
+    private LocalDateTime deadline;
+
+    // Constructor only for Hibernate use, Hibernate is creating entity and then reading it from the db
+    Task() {
+    }
 
     public int getId() {
         return id;
