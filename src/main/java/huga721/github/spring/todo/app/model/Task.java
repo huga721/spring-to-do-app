@@ -1,45 +1,67 @@
 package huga721.github.spring.todo.app.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tasks")
-public class Task {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @NotBlank(message = "Task's description must not be empty")
-    private String description;
-    private boolean done;
+public class Task extends TaskSuperClass {
+
+    @Embedded
+    private Audit audit = new Audit();
+    @ManyToOne
+    @JoinColumn(name = "task_group_id")
+    private TaskGroup group;
     private LocalDateTime deadline;
+
 
     // Constructor only for Hibernate use, Hibernate is creating entity and then reading it from the db
     Task() {
     }
 
+
+    public LocalDateTime getDeadline() {
+        return deadline;
+    }
+
+    void setDeadline(final LocalDateTime deadline) {
+        this.deadline = deadline;
+    }
+
+    @Override
     public int getId() {
-        return id;
+        return super.getId();
     }
 
-    public void setId(int id) {
-        this.id = id;
+    @Override
+    public void setId(final int id) {
+        super.setId(id);
     }
 
+    @Override
     public String getDescription() {
-        return description;
+        return super.getDescription();
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    @Override
+    void setDescription(final String description) {
+        super.setDescription(description);
     }
 
+    @Override
     public boolean isDone() {
-        return done;
+        return super.isDone();
     }
 
-    public void setDone(boolean done) {
-        this.done = done;
+    @Override
+    public void setDone(final boolean done) {
+        super.setDone(done);
+    }
+
+    public void updateFrom(final Task source) {
+        setDescription(source.getDescription());
+        setDone(source.isDone());
+        deadline = source.deadline;
+//        group = source.group;
     }
 }
