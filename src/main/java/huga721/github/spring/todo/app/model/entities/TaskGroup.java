@@ -1,6 +1,8 @@
-package huga721.github.spring.todo.app.model;
+package huga721.github.spring.todo.app.model.entities;
 
-import org.springframework.data.web.ProjectedPayload;
+import huga721.github.spring.todo.app.model.entities.Project;
+import huga721.github.spring.todo.app.model.entities.Task;
+import huga721.github.spring.todo.app.model.entities.TaskSuperClass;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -11,13 +13,12 @@ public class TaskGroup extends TaskSuperClass {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "group")
     private Set<Task> tasks;
-
     @ManyToOne
     @JoinColumn(name = "project_id")
     private Project project;
 
     // Constructor only for Hibernate use, Hibernate is creating entity and then reading it from the db
-    TaskGroup() {
+    public TaskGroup() {
     }
 
     @Override
@@ -26,7 +27,7 @@ public class TaskGroup extends TaskSuperClass {
     }
 
     @Override
-    void setId(final int id) {
+    public void setId(final int id) {
         super.setId(id);
     }
 
@@ -36,7 +37,7 @@ public class TaskGroup extends TaskSuperClass {
     }
 
     @Override
-    void setDescription(final String description) {
+    public void setDescription(final String description) {
         super.setDescription(description);
     }
 
@@ -54,7 +55,15 @@ public class TaskGroup extends TaskSuperClass {
         return tasks;
     }
 
-    void setTasks(final Set<Task> tasks) {
+    public void setTasks(final Set<Task> tasks) {
         this.tasks = tasks;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(final Project project) {
+        this.project = project;
     }
 }

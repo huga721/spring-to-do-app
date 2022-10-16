@@ -1,4 +1,4 @@
-package huga721.github.spring.todo.app.model;
+package huga721.github.spring.todo.app.model.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -14,9 +14,9 @@ public class Project {
     @NotBlank(message = "Description can't be null")
     private String description;
     @OneToMany(mappedBy = "project")
-    Set<TaskGroup> setTaskGroup;
-    @OneToMany(mappedBy = "project")
-    Set<ProjectSteps> setProjectSteps;
+    Set<TaskGroup> tasks;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "project")
+    Set<ProjectSteps> steps;
 
     public int getId() {
         return id;
@@ -34,19 +34,19 @@ public class Project {
         this.description = description;
     }
 
-    public Set<TaskGroup> getSetTaskGroup() {
-        return setTaskGroup;
+    public Set<TaskGroup> getTasks() {
+        return tasks;
     }
 
-    void setSetTaskGroup(final Set<TaskGroup> setTaskGroup) {
-        this.setTaskGroup = setTaskGroup;
+    void setTasks(final Set<TaskGroup> tasks) {
+        this.tasks = tasks;
     }
 
-    public Set<ProjectSteps> getSetProjectSteps() {
-        return setProjectSteps;
+    public Set<ProjectSteps> getSteps() {
+        return steps;
     }
 
-    void setSetProjectSteps(final Set<ProjectSteps> setProjectSteps) {
-        this.setProjectSteps = setProjectSteps;
+    void setSteps(final Set<ProjectSteps> steps) {
+        this.steps = steps;
     }
 }

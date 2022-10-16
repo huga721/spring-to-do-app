@@ -1,4 +1,5 @@
-package huga721.github.spring.todo.app.model;
+package huga721.github.spring.todo.app.model.entities;
+
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -16,15 +17,14 @@ public class Task extends TaskSuperClass {
 
 
     // Constructor only for Hibernate use, Hibernate is creating entity and then reading it from the db
-    Task() {
+    public Task() {
     }
-
 
     public LocalDateTime getDeadline() {
         return deadline;
     }
 
-    void setDeadline(final LocalDateTime deadline) {
+    public void setDeadline(final LocalDateTime deadline) {
         this.deadline = deadline;
     }
 
@@ -44,7 +44,7 @@ public class Task extends TaskSuperClass {
     }
 
     @Override
-    void setDescription(final String description) {
+    public void setDescription(final String description) {
         super.setDescription(description);
     }
 
@@ -62,6 +62,5 @@ public class Task extends TaskSuperClass {
         setDescription(source.getDescription());
         setDone(source.isDone());
         deadline = source.deadline;
-//        group = source.group;
     }
 }

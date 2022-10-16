@@ -1,4 +1,6 @@
-package huga721.github.spring.todo.app.model;
+package huga721.github.spring.todo.app.model.entities;
+
+import huga721.github.spring.todo.app.model.entities.Project;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;

@@ -1,7 +1,7 @@
-package huga721.github.spring.todo.app.adapter;
+package huga721.github.spring.todo.app.model.repo.adapter;
 
-import huga721.github.spring.todo.app.model.Task;
-import huga721.github.spring.todo.app.repo.TaskRepository;
+import huga721.github.spring.todo.app.model.entities.Task;
+import huga721.github.spring.todo.app.model.repo.TaskRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

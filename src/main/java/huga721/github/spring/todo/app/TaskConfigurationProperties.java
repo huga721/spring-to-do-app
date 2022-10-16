@@ -24,7 +24,7 @@ public class TaskConfigurationProperties {
             return allowMultipleTasks;
         }
 
-        void setAllowMultipleTasks(final boolean allowMultipleTasks) {
+        public void setAllowMultipleTasks(final boolean allowMultipleTasks) {
             this.allowMultipleTasks = allowMultipleTasks;
         }
     }

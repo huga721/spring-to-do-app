@@ -1,7 +1,7 @@
 package huga721.github.spring.todo.app.controller;
 
-import huga721.github.spring.todo.app.model.*;
-import huga721.github.spring.todo.app.repo.TaskRepository;
+import huga721.github.spring.todo.app.model.entities.Task;
+import huga721.github.spring.todo.app.model.repo.TaskRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Pageable;
